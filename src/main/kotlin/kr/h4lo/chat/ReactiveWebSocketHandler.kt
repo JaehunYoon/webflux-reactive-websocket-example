@@ -18,4 +18,19 @@ class ReactiveWebSocketHandler : WebSocketHandler {
                         .map(WebSocketMessage::getPayloadAsText)
                         .log())
     }
+
+    /**
+     * Kotlin Webflux Client Example Code
+     */
+
+    /*
+    ReactorNettyWebSocketClient().execute(URI("ws://localhost:8080/event-emitter")) { session ->
+        session.send(session.textMessage("foo").toMono())
+                .thenMany(session.receive()
+                        .map(WebSocketMessage::getPayloadAsText)
+                        .log()
+                ).then()
+    }
+    .block(Duration.ofSeconds(10))
+     */
 }
